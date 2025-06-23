@@ -1,0 +1,16 @@
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\bin\Debug\net8.0-windows\TOOL_BINH_TRAN.exe
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\bin\Debug\net8.0-windows\TOOL_BINH_TRAN.deps.json
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\bin\Debug\net8.0-windows\TOOL_BINH_TRAN.runtimeconfig.json
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\bin\Debug\net8.0-windows\TOOL_BINH_TRAN.dll
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\bin\Debug\net8.0-windows\TOOL_BINH_TRAN.pdb
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.Form1.resources
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.csproj.GenerateResource.cache
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.AssemblyInfoInputs.cache
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.AssemblyInfo.cs
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.csproj.CoreCompileInputs.cache
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.dll
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\refint\TOOL_BINH_TRAN.dll
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.pdb
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\TOOL_BINH_TRAN.genruntimeconfig.cache
+C:\Users\VinhLy\source\repos\TOOL_BINH_TRAN\TOOL_BINH_TRAN\obj\Debug\net8.0-windows\ref\TOOL_BINH_TRAN.dll
