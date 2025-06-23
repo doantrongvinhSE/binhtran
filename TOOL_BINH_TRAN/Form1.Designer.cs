@@ -28,15 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewCheckBoxColumn();
+            cbxAccount = new DataGridViewCheckBoxColumn();
             stt = new DataGridViewTextBoxColumn();
+            uid = new DataGridViewTextBoxColumn();
             cookie = new DataGridViewTextBoxColumn();
+            token = new DataGridViewTextBoxColumn();
             proxy = new DataGridViewTextBoxColumn();
             process = new DataGridViewTextBoxColumn();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            btnPasteData = new ToolStripMenuItem();
+            btnSelectAll = new ToolStripMenuItem();
+            btnClearAll = new ToolStripMenuItem();
+            btnSelectBlack = new ToolStripMenuItem();
+            btnUnselectAll = new ToolStripMenuItem();
+            btnUnselectedBlack = new ToolStripMenuItem();
+            btnDeleteDataBlack = new ToolStripMenuItem();
             panel2 = new Panel();
             numericUpDown2 = new NumericUpDown();
             label2 = new Label();
@@ -47,6 +58,7 @@
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -73,9 +85,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, stt, cookie, proxy, process });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { cbxAccount, stt, uid, cookie, token, proxy, process });
+            dataGridView1.ContextMenuStrip = contextMenuStrip1;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
@@ -83,11 +98,11 @@
             dataGridView1.Size = new Size(1264, 501);
             dataGridView1.TabIndex = 0;
             // 
-            // Column1
+            // cbxAccount
             // 
-            Column1.FillWeight = 20.0969639F;
-            Column1.HeaderText = "";
-            Column1.Name = "Column1";
+            cbxAccount.FillWeight = 20.0969639F;
+            cbxAccount.HeaderText = "";
+            cbxAccount.Name = "cbxAccount";
             // 
             // stt
             // 
@@ -95,11 +110,21 @@
             stt.HeaderText = "STT";
             stt.Name = "stt";
             // 
+            // uid
+            // 
+            uid.HeaderText = "UID";
+            uid.Name = "uid";
+            // 
             // cookie
             // 
             cookie.FillWeight = 181.829666F;
             cookie.HeaderText = "Cookie";
             cookie.Name = "cookie";
+            // 
+            // token
+            // 
+            token.HeaderText = "Token";
+            token.Name = "token";
             // 
             // proxy
             // 
@@ -111,6 +136,61 @@
             process.FillWeight = 181.829666F;
             process.HeaderText = "Trạng Thái";
             process.Name = "process";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { btnPasteData, btnSelectAll, btnClearAll, btnSelectBlack, btnUnselectAll, btnUnselectedBlack, btnDeleteDataBlack });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(231, 158);
+            // 
+            // btnPasteData
+            // 
+            btnPasteData.Name = "btnPasteData";
+            btnPasteData.Size = new Size(230, 22);
+            btnPasteData.Text = "Dán data (coppy)";
+            btnPasteData.Click += btnPasteData_Click;
+            // 
+            // btnSelectAll
+            // 
+            btnSelectAll.Name = "btnSelectAll";
+            btnSelectAll.Size = new Size(230, 22);
+            btnSelectAll.Text = "Chọn tất cả";
+            btnSelectAll.Click += btnSelectAll_Click;
+            // 
+            // btnClearAll
+            // 
+            btnClearAll.Name = "btnClearAll";
+            btnClearAll.Size = new Size(230, 22);
+            btnClearAll.Text = "Xoá tất cả";
+            btnClearAll.Click += btnClearAll_Click;
+            // 
+            // btnSelectBlack
+            // 
+            btnSelectBlack.Name = "btnSelectBlack";
+            btnSelectBlack.Size = new Size(230, 22);
+            btnSelectBlack.Text = "Chọn dữ liệu được bôi đen";
+            btnSelectBlack.Click += btnSelectBlack_Click;
+            // 
+            // btnUnselectAll
+            // 
+            btnUnselectAll.Name = "btnUnselectAll";
+            btnUnselectAll.Size = new Size(230, 22);
+            btnUnselectAll.Text = "Bỏ chọn tất cả";
+            btnUnselectAll.Click += btnUnselectAll_Click;
+            // 
+            // btnUnselectedBlack
+            // 
+            btnUnselectedBlack.Name = "btnUnselectedBlack";
+            btnUnselectedBlack.Size = new Size(230, 22);
+            btnUnselectedBlack.Text = "Bỏ chọn dữ liệu được bôi đen";
+            btnUnselectedBlack.Click += btnUnselectedBlack_Click;
+            // 
+            // btnDeleteDataBlack
+            // 
+            btnDeleteDataBlack.Name = "btnDeleteDataBlack";
+            btnDeleteDataBlack.Size = new Size(230, 22);
+            btnDeleteDataBlack.Text = "Xoá dữ liệu được bôi đen";
+            btnDeleteDataBlack.Click += btnDeleteDataBlack_Click;
             // 
             // panel2
             // 
@@ -167,6 +247,7 @@
             button2.TabIndex = 1;
             button2.Text = "Dừng lại";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -189,6 +270,7 @@
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
@@ -208,9 +290,19 @@
         private Label label2;
         private NumericUpDown numericUpDown1;
         private Label label1;
-        private DataGridViewCheckBoxColumn Column1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem btnPasteData;
+        private ToolStripMenuItem btnSelectAll;
+        private ToolStripMenuItem btnClearAll;
+        private ToolStripMenuItem btnSelectBlack;
+        private ToolStripMenuItem btnUnselectAll;
+        private ToolStripMenuItem btnUnselectedBlack;
+        private ToolStripMenuItem btnDeleteDataBlack;
+        private DataGridViewCheckBoxColumn cbxAccount;
         private DataGridViewTextBoxColumn stt;
+        private DataGridViewTextBoxColumn uid;
         private DataGridViewTextBoxColumn cookie;
+        private DataGridViewTextBoxColumn token;
         private DataGridViewTextBoxColumn proxy;
         private DataGridViewTextBoxColumn process;
     }

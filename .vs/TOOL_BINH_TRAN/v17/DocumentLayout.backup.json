@@ -1,10 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\VinhLy\\source\\repos\\TOOL_BINH_TRAN\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\tool\\binhtran\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\vinhly\\source\\repos\\tool_binh_tran\\tool_binh_tran\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\domain\\registerappdomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\domain\\registerappdomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\helper\\helperutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\helper\\helperutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\domain\\phonedomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\domain\\phonedomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\domain\\emaildomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\domain\\emaildomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\model\\contactinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\model\\contactinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\helper\\proxyhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\helper\\proxyhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|c:\\users\\pc\\documents\\tool\\binhtran\\tool_binh_tran\\helper\\datagridviewhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{562236FD-90D4-487C-92C2-2ECDBF4D8897}|TOOL_BINH_TRAN\\TOOL_BINH_TRAN.csproj|solutionrelative:tool_binh_tran\\helper\\datagridviewhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,11 +54,115 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HelperUtils.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\helper\\HelperUtils.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\helper\\HelperUtils.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\helper\\HelperUtils.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\helper\\HelperUtils.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T03:10:18.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterAppDomain.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\domain\\RegisterAppDomain.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\domain\\RegisterAppDomain.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\domain\\RegisterAppDomain.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\domain\\RegisterAppDomain.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAowFgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T03:08:29.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContactInfo.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\model\\ContactInfo.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\model\\ContactInfo.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\model\\ContactInfo.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\model\\ContactInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:23:23.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProxyHelper.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\helper\\ProxyHelper.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\helper\\ProxyHelper.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\helper\\ProxyHelper.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\helper\\ProxyHelper.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:16:14.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmailDomain.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\domain\\EmailDomain.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\domain\\EmailDomain.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\domain\\EmailDomain.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\domain\\EmailDomain.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAgwFEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:13:58.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PhoneDomain.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\domain\\PhoneDomain.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\domain\\PhoneDomain.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\domain\\PhoneDomain.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\domain\\PhoneDomain.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:13:49.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VinhLy\\source\\repos\\TOOL_BINH_TRAN\\TOOL_BINH_TRAN\\Form1.cs",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\Form1.cs",
               "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\Form1.cs",
-              "ToolTip": "C:\\Users\\VinhLy\\source\\repos\\TOOL_BINH_TRAN\\TOOL_BINH_TRAN\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\Form1.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\Form1.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDcAAABIAgAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:03:19.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataGridViewHelper.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\helper\\DataGridViewHelper.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\helper\\DataGridViewHelper.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\helper\\DataGridViewHelper.cs",
+              "RelativeToolTip": "TOOL_BINH_TRAN\\helper\\DataGridViewHelper.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:01:41.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\Form1.cs",
+              "RelativeDocumentMoniker": "TOOL_BINH_TRAN\\Form1.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\tool\\binhtran\\TOOL_BINH_TRAN\\Form1.cs [Design]",
               "RelativeToolTip": "TOOL_BINH_TRAN\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-22T04:21:47.156Z",
