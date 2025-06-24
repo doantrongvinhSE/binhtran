@@ -2,11 +2,13 @@
 using TOOL_BINH_TRAN.domain;
 using TOOL_BINH_TRAN.helper;
 using TOOL_BINH_TRAN.model;
+using System.Threading;
 
 namespace TOOL_BINH_TRAN
 {
     public partial class Form1 : Form
     {
+        private CancellationTokenSource _cts;
         public Form1()
         {
             InitializeComponent();
@@ -49,29 +51,124 @@ namespace TOOL_BINH_TRAN
             DataGridViewHelper.RemoveSelectedRows(dataGridView1);
         }
 
-
-        // nút để test
-        private async void button2_Click(object sender, EventArgs e)
+        // nút để test (nút STOP)
+        private void button2_Click(object sender, EventArgs e)
         {
-            string cookie = "c_user=61577545237679;xs=10:S98x-G67giS4PQ:2:1750653333:-1:-1;datr=ZdtYaAuSA6L1XLR6CtHMFAvk;fr=0yyaagxDNYs0y5jn2.AWfeV38Sy70nH1MXywBc6rp13s4YnpupMWF5PuvNGcMtReSLyCE.BoWNtl..AAA.0.0.BoWNtl.AWeWmmKCCdLjwvsoG3pN1Bkyqzs;sb=ZdtYaPgIOEzA8zZrpNBrwOTw;wd=1920x953;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1750653801730%2C%22v%22%3A1%7D;";
+            _cts?.Cancel();
+        }
 
-            string proxy = "212.32.97.139:42911:I7AtQXJk4UKfcJk:FPMkcku0u7UQg86";
+        // start
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            _cts = new CancellationTokenSource();
+            var token = _cts.Token;
+            var tasks = new List<Task>();
 
-            string fb_dtsg = await HelperUtils.getFbDtsg(cookie, proxy);
-
-            string result = await RegisterAppDomain.RegisterAppAsync(cookie, fb_dtsg, proxy);
-
-            if (result.Contains("công"))
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-               string result2 = await RegisterAppDomain.sendSMSCodeAction(cookie, fb_dtsg, proxy);
+                if (row.Cells["cbxAccount"].Value != null && (bool)row.Cells["cbxAccount"].Value)
+                {
+                    tasks.Add(Task.Run(async () =>
+                    {
+                        try
+                        {
+                            if (token.IsCancellationRequested) return;
 
-                MessageBox.Show(result2);
-            } else
-            {
-                MessageBox.Show(result);
+                            string cookie = row.Cells["cookie"].Value.ToString();
+                            if (string.IsNullOrEmpty(cookie))
+                            {
+                                this.Invoke(new Action(() => row.Cells["process"].Value = "Cookie lỗi!"));
+                                return;
+                            }
+
+                            this.Invoke(new Action(() => row.Cells["process"].Value = "Đang get FBDTSG..."));
+                            string fb_dtsg = await HelperUtils.getFbDtsg(cookie);
+
+                            if (token.IsCancellationRequested) return;
+
+                            if (fb_dtsg.Contains("Lỗi"))
+                            {
+                                this.Invoke(new Action(() => row.Cells["process"].Value = "Lấy fb_dtsg thất bại!"));
+                                return;
+                            }
+
+                            this.Invoke(new Action(() => row.Cells["process"].Value = "Đang lấy email từ cookie..."));
+                            var emails = await EmailDomain.GetAllEmailFromCookie(cookie);
+
+                            if (token.IsCancellationRequested) return;
+
+                            if (emails.Count == 0)
+                            {
+                                this.Invoke(new Action(() => row.Cells["process"].Value = "Email lỗi hoặc không có email nào!"));
+                                return;
+                            }
+
+                            List<string> emails2 = new List<string>();
+                            foreach (ContactInfo item in emails)
+                            {
+                                if (!item.HasAnyPendingStatus)
+                                {
+                                    emails2.Add(item.NormalizedContactPoint.ToString());
+                                }
+                            }
+
+                            if (emails2.Count == 0)
+                            {
+                                this.Invoke(new Action(() => row.Cells["process"].Value = "Không có email hợp lệ nào!"));
+                                return;
+                            }
+
+                            this.Invoke(new Action(() => row.Cells["process"].Value = "Đang đăng ký ứng dụng..."));
+                            string result = await RegisterAppDomain.RegisterAppAsync(cookie, fb_dtsg);
+
+                            if (token.IsCancellationRequested) return;
+
+                            this.Invoke(new Action(() => row.Cells["process"].Value = result));
+                            foreach (var item in emails2)
+                            {
+                                if (token.IsCancellationRequested) return;
+                                string result2 = await RegisterAppDomain.sendEmail(cookie, fb_dtsg, item);
+                                if (result2.Contains("thành"))
+                                {
+                                    this.Invoke(new Action(() =>
+                                    {
+                                        row.Cells["process"].Value = $"Đã gửi email: {item}";
+                                        row.Cells["email"].Value += "\n" + item + " thành công";
+                                    }));
+                                }
+                                else
+                                {
+                                    this.Invoke(new Action(() =>
+                                    {
+                                        row.Cells["process"].Value = $"Gửi email {item} thất bại: {result2}";
+                                        row.Cells["email"].Value += "\n" + item + " thất bại";
+                                    }));
+                                }
+                            }
+                            this.Invoke(new Action(() => row.Cells["process"].Value = "Đã hoàn thành!"));
+                        }
+                        catch (OperationCanceledException)
+                        {
+                            this.Invoke(new Action(() => row.Cells["process"].Value = "Đã dừng!"));
+                        }
+                    }, token));
+                }
             }
 
+            if (tasks.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản!");
+                return;
+            }
 
+            try
+            {
+                await Task.WhenAll(tasks);
+            }
+            catch (OperationCanceledException)
+            {
+                // Có thể xử lý thêm nếu cần
+            }
         }
     }
 }

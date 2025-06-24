@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TOOL_BINH_TRAN")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c046f3ca76e0da480ec27a69ed0e0baf2ecde09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c22d3da59b44cb5ae11be85ca47e1d365660b70")]
 [assembly: System.Reflection.AssemblyProductAttribute("TOOL_BINH_TRAN")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TOOL_BINH_TRAN")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

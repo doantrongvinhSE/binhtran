@@ -70,20 +70,16 @@ namespace TOOL_BINH_TRAN.helper
 
                         string cookie = "", faCode = "", token = "";
 
-                        // Tìm các trường dữ liệu từ clipboard bằng cách sử dụng Regex
-                        Regex regex1 = new Regex(@"c_user=[^|]+");
-                        Match match1 = regex1.Match(line);
+                        // Tìm phần chứa "c_user=" trong các phần sau khi tách bằng dấu |
+                        foreach (var part in parts)
+                        {
+                            if (part.Contains("c_user="))
+                            {
+                                cookie = part.Trim();
+                                break;
+                            }
+                        }
 
-                        Regex regexToken = new Regex(@"EAA[\w\d]+");
-                        Match matchToken = regexToken.Match(line);
-
-                        Regex regex2Fa = new Regex(@"\|(\w{32})\|");
-                        Match match2Fa = regex2Fa.Match(line);
-
-
-                        cookie = match1.Value; // Tìm cookie sau "c_user="
-                        faCode = match2Fa.Groups[1].Value;// Tìm faCode (giả sử là chuỗi không dấu "cách")
-                        token = matchToken.Value; // Tìm token EAA
 
                         //MessageBox.Show("Cookie: " + cookie + "\nFaCode: " + faCode + "\nToken: " + token);
 
@@ -97,7 +93,6 @@ namespace TOOL_BINH_TRAN.helper
                         // Gán giá trị vào các cột trong DataGridView
                         grid.Rows[rowIndex].Cells["cookie"].Value = cookie;
                         //grid.Rows[rowIndex].Cells["faCode"].Value = faCode;
-                        grid.Rows[rowIndex].Cells["token"].Value = token;
 
 
                     }

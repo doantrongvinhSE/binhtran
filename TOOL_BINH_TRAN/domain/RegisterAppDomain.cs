@@ -1,9 +1,11 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using TOOL_BINH_TRAN.helper;
 
 namespace TOOL_BINH_TRAN.domain
@@ -52,18 +54,18 @@ namespace TOOL_BINH_TRAN.domain
                 }
                 else
                 {
-                    return "Đăng ký ứng dụng thất bại. Vui lòng kiểm tra lại.";
+                    return "Đăng ký ứng dụng thất bại.";
 
                 }
             }
             else
             {
-                return "Đăng ký ứng dụng thất bại. Vui lòng kiểm tra lại.";
+                return "Đăng ký ứng dụng thất bại.";
             }
 
         }
 
-        public async static Task<string> sendSMSCodeAction(string cookie, string fb_dtsg, string? proxy = null)
+        public static async Task<string> sendEmail(string cookie, string fb_dtsg, string email, string? proxy = null)
         {
             string uid = HelperUtils.ExtractUserIdFromCookie(cookie);
 
@@ -75,42 +77,56 @@ namespace TOOL_BINH_TRAN.domain
             ProxyHelper.SetProxy(options, proxy);
 
             var client = new RestClient(options);
-            var request = new RestRequest("/account/verify/send/?source=dev_onboarding&verification_type=code_sms", Method.Post);
+            var request = new RestRequest($"/developer/profile_email/send_confirmation_email/?email={email}&referrer=DeveloperRegistrationEmailContactUpdateDialog", Method.Post);
             request.AddHeader("accept", "*/*");
             request.AddHeader("content-type", "application/x-www-form-urlencoded");
             request.AddHeader("origin", "https://developers.facebook.com");
             request.AddHeader("priority", "u=1, i");
             request.AddHeader("referer", "https://developers.facebook.com/async/registration/dialog/?src=default");
+            request.AddHeader("sec-ch-prefers-color-scheme", "light");
+            request.AddHeader("sec-ch-ua", "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"");
+            request.AddHeader("sec-ch-ua-mobile", "?0");
+            request.AddHeader("sec-ch-ua-platform", "\"Windows\"");
             request.AddHeader("sec-fetch-dest", "empty");
             request.AddHeader("sec-fetch-mode", "cors");
             request.AddHeader("sec-fetch-site", "same-origin");
             request.AddHeader("Cookie", cookie);
-            request.AddParameter("country", "VN");
-            request.AddParameter("contact_point", "922778469");
-            request.AddParameter("state", "1");
-            request.AddParameter("used_in_registration", "true");
             request.AddParameter("__aaid", "0");
             request.AddParameter("__user", uid);
             request.AddParameter("__a", "1");
-            request.AddParameter("__req", "2");
             request.AddParameter("dpr", "1");
             request.AddParameter("__ccg", "EXCELLENT");
             request.AddParameter("fb_dtsg", fb_dtsg);
             RestResponse response = await client.ExecuteAsync(request);
 
-            if (response.IsSuccessful && !string.IsNullOrWhiteSpace(response.Content))
+            try
             {
-                // Kiểm tra xem phản hồi có chứa thông tin thành công hay không
-                if (response.Content.Contains("Vietnam"))
+                if (response.IsSuccessful && !string.IsNullOrWhiteSpace(response.Content) && response.Content.Contains("success"))
                 {
-                    return "Mã xác minh đã được gửi thành công.";
-                }
-                else
-                {
-                    return "Gửi mã xác minh thất bại. Vui lòng kiểm tra lại.";
+                    string jsData = response.Content;
+                    // Loại bỏ phần for (;;);{ ... }
+                    string jsonPart = jsData.Substring(jsData.IndexOf("{"));
+
+                    // Phân tích cú pháp JSON
+                    JObject jsonObject = JObject.Parse(jsonPart);
+
+                    // Lấy giá trị "success" trong phần "payload"
+                    bool success = (bool)jsonObject["payload"]["success"];
+
+
+                    return success ? "Đã gửi email thành công!" : "Gửi email thất bại!.";
+
+
                 }
             }
-            return "Gửi mã xác minh thất bại. Vui lòng kiểm tra lại.";
+            catch (Exception ex)
+            {
+                return $"Lỗi: {ex.Message}";
+
+            }
+                return "Lỗi gửi email";
         }
+
+
     }
 }
